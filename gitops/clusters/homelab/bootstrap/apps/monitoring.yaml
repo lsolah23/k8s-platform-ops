@@ -15,9 +15,9 @@ spec:
     targetRevision: 65.0.0
     helm:
       valueFiles:
-      - $values/gitops/apps/monitoring/kube-prometheus-stack/values.yaml
+      - apps/monitoring/kube-prometheus-stack/values.yaml
 
-  - repoURL: https://github.com/TU_USUARIO/TU_REPO.git
+  - repoURL: https://github.com/lsolah23/k8s-platform-ops.git
     targetRevision: main
     ref: values
     path: gitops
