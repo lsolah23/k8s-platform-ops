@@ -10,7 +10,9 @@ spec:
     kind: CustomResourceDefinition
     jsonPointers:
     - /spec
+    - /status
     - /metadata/annotations
+    - /metadata/managedFields
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
