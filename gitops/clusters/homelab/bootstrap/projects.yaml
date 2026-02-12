@@ -7,12 +7,16 @@ spec:
   sourceRepos:
   - "*"
   destinations:
-  - namespace: monitoring
-    server: https://kubernetes.default.svc
-  - namespace: kube-system
-    server: https://kubernetes.default.svc
-  - namespace: logging
-    server: https://kubernetes.default.svc
+spec:
+  destinations:
+    - namespace: monitoring
+      server: https://kubernetes.default.svc
+    - namespace: logging
+      server: https://kubernetes.default.svc
+    - namespace: policy
+      server: https://kubernetes.default.svc
+    - namespace: backup
+      server: https://kubernetes.default.svc
 
   clusterResourceWhitelist:
   - group: "*"
