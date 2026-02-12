@@ -8,13 +8,13 @@ spec:
   - "*"  
  
   destinations:
-    - namespace: monitoring
+  - namespace: monitoring
       server: https://kubernetes.default.svc
-    - namespace: logging
+  - namespace: logging
       server: https://kubernetes.default.svc
-    - namespace: policy
+  - namespace: policy
       server: https://kubernetes.default.svc
-    - namespace: backup
+  - namespace: backup
       server: https://kubernetes.default.svc
 
   clusterResourceWhitelist:
