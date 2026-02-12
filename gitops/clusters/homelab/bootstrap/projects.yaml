@@ -16,6 +16,9 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: backup
       server: https://kubernetes.default.svc
+    - namespace: kube-system
+      server: https://kubernetes.default.svc
+
 
   clusterResourceWhitelist:
     - group: "*"
