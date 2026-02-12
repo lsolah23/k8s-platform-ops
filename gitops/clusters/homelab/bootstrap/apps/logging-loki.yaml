@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loki
+  namespace: argocd
+spec:
+  project: platform
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: logging
+
+  sources:
+  - repoURL: https://grafana.github.io/helm-charts
+    chart: loki
+    targetRevision: 6.6.5
+    helm:
+      releaseName: loki
+      valueFiles:
+      - $values/apps/platform/logging/loki/values.yaml
+
+  - repoURL: https://github.com/lsolah23/k8s-platform-ops.git
+    targetRevision: main
+    ref: values
+    path: .
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
