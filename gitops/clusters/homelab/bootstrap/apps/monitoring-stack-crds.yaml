@@ -18,5 +18,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  syncOptions:
-    - SkipDryRunOnMissingResource=true
+    syncOptions:
+      - SkipDryRunOnMissingResource=true
