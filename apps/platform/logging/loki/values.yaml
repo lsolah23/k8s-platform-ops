@@ -48,6 +48,7 @@ service:
   type: ClusterIP
 
 limits_config:
+  allow_structured_metadata: false
   retention_period: 168h # 7d
   reject_old_samples: true
   reject_old_samples_max_age: 168h
