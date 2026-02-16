@@ -1,5 +1,16 @@
 deploymentMode: SingleBinary
 
+loki:
+  auth_enabled: false
+
+  commonConfig:
+    replication_factor: 1
+
+  ingester:
+    lifecycler:
+      ring:
+        replication_factor: 1
+
 chunksCache:
   enabled: true
   allocatedMemory: 1024
@@ -11,8 +22,7 @@ chunksCache:
       memory: 1Gi
 
 
-loki:
-  auth_enabled: false
+
 
   storage:
     type: filesystem
