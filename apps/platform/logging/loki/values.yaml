@@ -2,6 +2,7 @@ deploymentMode: SingleBinary
 
 loki:
   auth_enabled: false
+
   storage:
     type: filesystem
     bucketNames:
@@ -9,10 +10,29 @@ loki:
       ruler: loki-ruler
       admin: loki-admin
 
+  # ✅ OBLIGATORIO: schema_config
+  schemaConfig:
+    configs:
+      - from: "2024-01-01"
+        store: boltdb-shipper
+        object_store: filesystem
+        schema: v13
+        index:
+          prefix: loki_index_
+          period: 24h
+
+  # ✅ Recomendado para filesystem + boltdb-shipper
+  storageConfig:
+    boltdb_shipper:
+      active_index_directory: /var/loki/index
+      cache_location: /var/loki/cache
+      shared_store: filesystem
+    filesystem:
+      directory: /var/loki/chunks
+
 singleBinary:
   replicas: 1
 
-# ✅ apaga simple scalable (aunque no lo tengas hoy, así no hay defaults que choquen)
 read:
   replicas: 0
 write:
