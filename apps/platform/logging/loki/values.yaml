@@ -32,6 +32,8 @@ loki:
 
 singleBinary:
   replicas: 1
+  extraArgs:
+    - -validation.allow-structured-metadata=false
 
 read:
   replicas: 0
