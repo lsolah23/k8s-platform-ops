@@ -1,5 +1,16 @@
 deploymentMode: SingleBinary
 
+chunksCache:
+  enabled: true
+  allocatedMemory: 1024
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1Gi
+    limits:
+      memory: 1Gi
+
+
 loki:
   auth_enabled: false
 
