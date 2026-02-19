@@ -1,0 +1,21 @@
+credentials:
+  useSecret: true
+  existingSecret: cloud-credentials
+
+configuration:
+  backupStorageLocation:
+    - name: default
+      provider: aws
+      bucket: velero-homelab-test-leo-us-east-1
+      prefix: velero
+      config:
+        region: us-east-1
+
+initContainers:
+  - name: velero-plugin-for-aws
+    image: velero/velero-plugin-for-aws:v1.10.0
+    volumeMounts:
+      - mountPath: /target
+        name: plugins
+
+deployNodeAgent: true
