@@ -18,11 +18,7 @@ initContainers:
       - mountPath: /target
         name: plugins
 
-#  fix  del ImagePullBackOff
-kubectl:
-  image:
-    repository: bitnamilegacy/kubectl
-    tag: "1.33.2-debian-12-r0"
-    pullPolicy: IfNotPresent
-
 deployNodeAgent: true
+
+upgradeCRDs:
+  enabled: false
