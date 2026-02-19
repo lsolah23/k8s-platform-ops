@@ -20,6 +20,7 @@ spec:
     - repoURL: https://github.com/lsolah23/k8s-platform-ops.git
       targetRevision: main
       ref: values
+      path: .
 
   syncPolicy:
     automated:
