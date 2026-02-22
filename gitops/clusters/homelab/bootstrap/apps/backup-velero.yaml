@@ -24,9 +24,3 @@ spec:
       ref: values
       path: .
 
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
