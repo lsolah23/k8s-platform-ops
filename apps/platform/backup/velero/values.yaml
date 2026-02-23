@@ -20,8 +20,8 @@ initContainers:
 
 deployNodeAgent: true
 
-upgradeCRDs:
-  enabled: false
+upgradeCRDs: false
+cleanUpCRDs: false
 
 kubectl:
   image:
