@@ -11,6 +11,8 @@ configuration:
       config:
         region: us-east-1
 
+  volumeSnapshotLocation: []
+
 initContainers:
   - name: velero-plugin-for-aws
     image: velero/velero-plugin-for-aws:v1.10.0
